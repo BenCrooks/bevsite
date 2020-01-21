@@ -12,42 +12,9 @@ function Text1() {
         position: "absolute",
         left: 0,
         top: 0,
-        backgroundColor: "#f0ead6e3"
+        backgroundColor: "#ffffff"
       }}
     >
-      <div
-        style={{
-          fontFamily: "Helvetica",
-          alignSelf: "center",
-          fontSize: 12,
-          pointerEvents: "none",
-          width: "60%",
-          margin: "3%",
-          height: "5%",
-          left: "20%",
-          position: "absolute",
-          color: "#333333"
-        }}
-      >
-        <div
-          style={{
-            height: 30,
-            width: "2%",
-            backgroundColor: "#333333"
-          }}
-        ></div>
-        <div
-          style={{
-            position: "absolute",
-            fontSize: 30,
-            color: "#333333",
-            top: "38%",
-            left: "3%"
-          }}
-        >
-          Labour:
-        </div>
-      </div>
       <div
         style={{
           textAlign: "left",
@@ -62,12 +29,25 @@ function Text1() {
               width: "70%",
               pointerEvents: "none",
               fontSize: 15,
-              color: "#333333",
+              color: "#ffffff",
               textAlign: "left",
               margin: "15%",
               lineHeight: 1.5
             }}
           >
+            <div
+              style={{
+                fontSize: 15,
+                color: "#ffffff",
+                top: "38%",
+                left: "3%",
+                fontWeight: "bold"
+              }}
+            >
+              Labour
+            </div>
+            <br />
+            <br />
             Weaving is slow, it consumes time, work, labour, materials.
             <br />
             <br />

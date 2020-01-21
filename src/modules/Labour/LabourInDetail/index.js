@@ -24,7 +24,7 @@ function LabourInDetail() {
         fit="cover"
         onMouseUp={() => {
           if (!displayText) {
-            imageChoice === 6 || imageChoice === 10
+            imageChoice === 10
               ? setdisplayText(true)
               : imageChoice < imageList.length - 1
               ? setImageChoice(a => a + 1)
@@ -50,7 +50,7 @@ function LabourInDetail() {
             left: 0,
             top: 0,
             pointerEvents: "none",
-            backgroundColor: "#f0ead6e3",
+            backgroundColor: "#000000e3",
             fontSize: 16
           }}
         >
@@ -60,10 +60,10 @@ function LabourInDetail() {
               position: "absolute",
               left: "15%",
               margin: "3%",
-              color: "black"
+              color: "white"
             }}
           >
-            {imageChoice === 6 && <Text1 />}
+            {imageChoice === 10 && <Text1 />}
           </div>
         </div>
       )}

@@ -12,54 +12,9 @@ function GenderedEmbodimentText() {
         position: "absolute",
         left: 0,
         top: 0,
-        backgroundColor: "#f0ead6e3"
+        backgroundColor: "#000000e3"
       }}
     >
-      <div
-        style={{
-          fontFamily: "Helvetica",
-          alignSelf: "center",
-          fontSize: 12,
-          pointerEvents: "none",
-          width: "60%",
-          margin: "3%",
-          height: "5%",
-          left: "20%",
-          position: "absolute",
-          color: "#333333"
-        }}
-      >
-        <div
-          style={{
-            height: 48,
-            width: "2%",
-            backgroundColor: "#333333"
-          }}
-        ></div>
-        <div
-          style={{
-            position: "absolute",
-            fontSize: 30,
-            color: "#333333",
-            top: "38%",
-            left: "3%"
-          }}
-        >
-          Embodiment:
-          <div
-            style={{
-              fontSize: 20,
-              color: "#333333",
-              position: "absolute",
-              top: "100%",
-              width: "400%",
-              left: 0
-            }}
-          >
-            texture of gendered life; my subjective feminine experience
-          </div>
-        </div>
-      </div>
       <div style={{ position: "absolute", top: "1%" }}>
         <div
           style={{
@@ -68,12 +23,26 @@ function GenderedEmbodimentText() {
             width: "70%",
             pointerEvents: "none",
             fontSize: 14,
-            color: "#000000",
+            color: "#ffffff",
             textAlign: "left",
             margin: "15%",
             lineHeight: 1.5
           }}
         >
+          <div
+            style={{
+              fontFamily: "Helvetica",
+              top: 5,
+              pointerEvents: "none",
+              fontSize: 14,
+              color: "#ffffff",
+              textAlign: "left",
+              lineHeight: 1.5,
+              fontWeight: "bold"
+            }}
+          >
+            texture of gendered life; my subjective feminine experience
+          </div>
           <br />
           <br />
           The creative process gives material expression to the tensions and

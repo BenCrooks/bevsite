@@ -6,6 +6,7 @@ import LabourInDetail from "./LabourInDetail";
 
 function Labour({ OpenLabourDetails, setOpenLabourDetails }) {
   const [overUnderString, setoverUnderString] = useState("");
+  const [evenOdd, setEvenOdd] = useState(true);
 
   return (
     <div
@@ -14,10 +15,15 @@ function Labour({ OpenLabourDetails, setOpenLabourDetails }) {
     >
       {OpenLabourDetails && <LabourInDetail />}
       <img
-        onMouseDown={() => setoverUnderString(a => a + "Over ")}
-        onMouseUp={
+        onMouseDown={
           !OpenLabourDetails
-            ? () => setoverUnderString(a => a + "Under ")
+            ? () => {
+                evenOdd
+                  ? setoverUnderString(a => a + "Over ")
+                  : setoverUnderString(a => a + "Under ");
+
+                setEvenOdd(a => !a);
+              }
             : () => {
                 setoverUnderString("");
                 setOpenLabourDetails(false);
@@ -51,7 +57,7 @@ function Labour({ OpenLabourDetails, setOpenLabourDetails }) {
             left: 0,
             width: "100%",
             pointerEvents: "none",
-            fontSize: "7.25vh",
+            fontSize: "5vh",
             color: "#33333388",
             letterSpacing: 0.5
           }}
