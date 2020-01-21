@@ -12,56 +12,37 @@ function IntroductionText() {
         position: "absolute",
         left: 0,
         top: 0,
-        backgroundColor: "#f0ead6e3"
+        backgroundColor: "#000000e3"
       }}
     >
-      <div
-        style={{
-          fontFamily: "Helvetica",
-          alignSelf: "center",
-          fontSize: 12,
-          pointerEvents: "none",
-          width: "60%",
-          margin: "3%",
-          height: "5%",
-          left: "20%",
-          position: "absolute",
-          color: "#333333"
-        }}
-      >
-        <div
-          style={{
-            height: 40,
-            width: "2%",
-            backgroundColor: "#333333"
-          }}
-        ></div>
-        <div
-          style={{
-            position: "absolute",
-            fontSize: 20,
-            color: "#333333",
-            top: "38%",
-            left: "3%"
-          }}
-        >
-          Embodied-entanglements | Entangled-embodiments
-        </div>
-      </div>
-      <div style={{ position: "absolute", top: "2%" }}>
+      <div style={{ position: "absolute", top: "0%" }}>
         <div
           style={{
             fontFamily: "Helvetica",
-            top: 30,
             width: "70%",
             pointerEvents: "none",
             fontSize: 12,
-            color: "#000000",
+            color: "#ffffff",
             textAlign: "left",
             margin: "15%",
             lineHeight: 1.5
           }}
         >
+          <div
+            style={{
+              fontFamily: "Helvetica",
+              pointerEvents: "none",
+              fontSize: 12,
+              color: "#ffffff",
+              textAlign: "left",
+              lineHeight: 1.5,
+              fontWeight: "bold"
+            }}
+          >
+            Embodied-entanglements | Entangled-embodiments
+          </div>
+          <br />
+          <br />
           Embodied-entanglements/ entangled-embodiments is an experimental
           creative process that explores how making entangled objects through a
           sustained making practice can expose and make meaning of embodied

@@ -44,10 +44,10 @@ function ZoomFunctionality({ imgSrc }) {
           height: widthHeight[1],
           borderWidth: "5px",
           borderStyle: "solid",
-          borderColor: OverZoom ? "#333333" : "#33333350",
+          borderColor: OverZoom ? "#333333" : "#33333385",
           position: "absolute",
-          bottom: 0,
-          left: 0,
+          top: 0,
+          right: 0,
           margin: "1.5%",
           pointerEvents: "auto"
         }}

@@ -17,7 +17,13 @@ function MenuButton({ setscreenToShow }) {
           src={menu}
           className="images"
           alt="logo"
-          style={{ width: "5%", left: "0%", position: "absolute", margin: 10 }}
+          style={{
+            width: "5%",
+            left: "0%",
+            position: "absolute",
+            margin: 10,
+            top: "4%"
+          }}
         />
       ) : (
         <div
@@ -45,7 +51,7 @@ function MenuButton({ setscreenToShow }) {
               position: "absolute"
             }}
           />
-          <div
+          {/* <div
             onMouseDown={() => setscreenToShow(0)}
             onMouseEnter={() => setDescription("Introduction")}
             onMouseLeave={() => setDescription(undefined)}
@@ -58,7 +64,7 @@ function MenuButton({ setscreenToShow }) {
               top: "6%",
               left: "5%"
             }}
-          />
+          /> */}
           <div
             onMouseDown={() => setscreenToShow(1)}
             onMouseEnter={() => setDescription("Full Text")}
@@ -75,7 +81,9 @@ function MenuButton({ setscreenToShow }) {
           />
           <div
             onMouseDown={() => setscreenToShow(2)}
-            onMouseEnter={() => setDescription("Coded Materials")}
+            onMouseEnter={() =>
+              setDescription("The Body As A Site For Coded Knowledge")
+            }
             onMouseLeave={() => setDescription(undefined)}
             onMouseMove={e => setDescriptionPosition([e.clientX, e.clientY])}
             style={{
@@ -89,7 +97,7 @@ function MenuButton({ setscreenToShow }) {
           />
           <div
             onMouseDown={() => setscreenToShow(3)}
-            onMouseEnter={() => setDescription("Personal Associations")}
+            onMouseEnter={() => setDescription("Coded Materials")}
             onMouseLeave={() => setDescription(undefined)}
             onMouseMove={e => setDescriptionPosition([e.clientX, e.clientY])}
             style={{
@@ -97,8 +105,8 @@ function MenuButton({ setscreenToShow }) {
               backgroundColor: "#66003340",
               width: "17%",
               height: "19%",
-              top: "35%",
-              left: "22%"
+              top: "33%",
+              left: "6%"
             }}
           />
           <div
@@ -117,7 +125,7 @@ function MenuButton({ setscreenToShow }) {
           />
           <div
             onMouseDown={() => setscreenToShow(5)}
-            onMouseEnter={() => setDescription("Gendered Embodiment")}
+            onMouseEnter={() => setDescription("Texture Of A Gendered Life")}
             onMouseLeave={() => setDescription(undefined)}
             onMouseMove={e => setDescriptionPosition([e.clientX, e.clientY])}
             style={{
@@ -145,7 +153,7 @@ function MenuButton({ setscreenToShow }) {
           />
           <div
             onMouseDown={() => setscreenToShow(7)}
-            onMouseEnter={() => setDescription("Embodiment Traces")}
+            onMouseEnter={() => setDescription("Sedimented Surfaces")}
             onMouseLeave={() => setDescription(undefined)}
             onMouseMove={e => setDescriptionPosition([e.clientX, e.clientY])}
             style={{
