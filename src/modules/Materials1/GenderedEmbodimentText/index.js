@@ -18,7 +18,6 @@ function GenderedEmbodimentText() {
       <div style={{ position: "absolute", top: "1%" }}>
         <div
           style={{
-            fontFamily: "Helvetica",
             top: 5,
             width: "70%",
             pointerEvents: "none",
@@ -26,19 +25,20 @@ function GenderedEmbodimentText() {
             color: "#ffffff",
             textAlign: "left",
             margin: "15%",
-            lineHeight: 1.5
+            lineHeight: 1.5,
+            fontFamily: "Roboto Mono"
           }}
         >
           <div
             style={{
-              fontFamily: "Helvetica",
               top: 5,
               pointerEvents: "none",
               fontSize: 14,
               color: "#ffffff",
               textAlign: "left",
               lineHeight: 1.5,
-              fontWeight: "bold"
+
+              fontFamily: "Roboto Mono"
             }}
           >
             texture of gendered life; my subjective feminine experience

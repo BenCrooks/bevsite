@@ -18,25 +18,24 @@ function PersonalAssociationsText() {
       <div style={{ position: "absolute", top: "2%" }}>
         <div
           style={{
-            fontFamily: "Helvetica",
             width: "70%",
             pointerEvents: "none",
             fontSize: 12,
             color: "#ffffff",
             textAlign: "left",
             margin: "15%",
-            lineHeight: 1.5
+            lineHeight: 1.5,
+            fontFamily: "Roboto Mono"
           }}
         >
           <div
             style={{
-              fontFamily: "Helvetica",
               pointerEvents: "none",
               fontSize: 12,
               color: "#ffffff",
               textAlign: "left",
               lineHeight: 1.5,
-              fontWeight: "bold"
+              fontFamily: "Roboto Mono"
             }}
           >
             coded materials

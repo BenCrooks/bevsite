@@ -21,27 +21,33 @@ function Text1() {
           margin: "5%"
         }}
       >
-        <div style={{ position: "absolute", top: 50, left: "20%" }}>
+        <div
+          style={{
+            position: "absolute",
+            top: 50,
+            left: "20%"
+          }}
+        >
           <div
             style={{
-              fontFamily: "Helvetica",
               top: 30,
               width: "70%",
               pointerEvents: "none",
-              fontSize: 15,
+              fontSize: "1.3vh",
               color: "#ffffff",
               textAlign: "left",
               margin: "15%",
-              lineHeight: 1.5
+              lineHeight: 1.5,
+              fontFamily: "Roboto Mono"
             }}
           >
             <div
               style={{
-                fontSize: 15,
+                fontSize: "1.3vh",
                 color: "#ffffff",
                 top: "38%",
                 left: "3%",
-                fontWeight: "bold"
+                fontFamily: "Roboto Mono"
               }}
             >
               Labour

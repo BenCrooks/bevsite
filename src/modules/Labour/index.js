@@ -51,20 +51,20 @@ function Labour({ OpenLabourDetails, setOpenLabourDetails }) {
         <div
           className="textibooi"
           style={{
-            fontFamily: "Helvetica",
             position: "absolute",
-            top: 0,
+            top: "25vh",
             left: 0,
             width: "100%",
             pointerEvents: "none",
-            fontSize: "5vh",
-            color: "#33333388",
-            letterSpacing: 0.5
+            fontSize: "4vh",
+            color: "#13131388",
+            letterSpacing: 0.5,
+            fontFamily: "Roboto Mono"
           }}
         >
           {document.getElementsByClassName("textibooi")[0] !== undefined &&
             document.getElementsByClassName("textibooi")[0].scrollHeight >
-              document.getElementsByName("labour")[0].scrollHeight &&
+              document.getElementsByName("labour")[0].scrollHeight / 3 &&
             setOpenLabourDetails(true)}
 
           {overUnderString}

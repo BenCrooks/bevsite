@@ -2,11 +2,14 @@ import React, { useState } from "react";
 import menu from "../images/menuWeave.svg";
 import menuOpen from "../images/MenuOpe.svg";
 
-function MenuButton({ setscreenToShow }) {
+function MenuButton({ setscreenToShow, setShowTip }) {
   const [Pressed, setPressed] = useState(false);
   const [Description, setDescription] = useState(false);
   const [DescriptionPosition, setDescriptionPosition] = useState([0, 0]);
 
+  if (Pressed) {
+    setShowTip(false);
+  }
   return (
     <>
       {!Pressed ? (
@@ -22,7 +25,7 @@ function MenuButton({ setscreenToShow }) {
             left: "0%",
             position: "absolute",
             margin: 10,
-            top: "4%"
+            top: "1%"
           }}
         />
       ) : (
@@ -66,21 +69,21 @@ function MenuButton({ setscreenToShow }) {
             }}
           /> */}
           <div
-            onMouseDown={() => setscreenToShow(1)}
+            onMouseDown={() => setscreenToShow(7)}
             onMouseEnter={() => setDescription("Full Text")}
             onMouseLeave={() => setDescription(undefined)}
             onMouseMove={e => setDescriptionPosition([e.clientX, e.clientY])}
             style={{
               position: "absolute",
               backgroundColor: "#66003340",
-              width: "30%",
-              height: "19%",
-              top: "7%",
-              left: "24%"
+              width: "27%",
+              height: "16%",
+              top: "83%",
+              left: "1%"
             }}
           />
           <div
-            onMouseDown={() => setscreenToShow(2)}
+            onMouseDown={() => setscreenToShow(3)}
             onMouseEnter={() =>
               setDescription("The Body As A Site For Coded Knowledge")
             }
@@ -90,23 +93,23 @@ function MenuButton({ setscreenToShow }) {
               position: "absolute",
               backgroundColor: "#66003340",
               width: "17%",
-              height: "21%",
-              top: "8%",
-              left: "82%"
+              height: "19%",
+              top: "33%",
+              left: "6%"
             }}
           />
           <div
-            onMouseDown={() => setscreenToShow(3)}
+            onMouseDown={() => setscreenToShow(1)}
             onMouseEnter={() => setDescription("Coded Materials")}
             onMouseLeave={() => setDescription(undefined)}
             onMouseMove={e => setDescriptionPosition([e.clientX, e.clientY])}
             style={{
               position: "absolute",
               backgroundColor: "#66003340",
-              width: "17%",
+              width: "30%",
               height: "19%",
-              top: "33%",
-              left: "6%"
+              top: "7%",
+              left: "24%"
             }}
           />
           <div
@@ -152,17 +155,17 @@ function MenuButton({ setscreenToShow }) {
             }}
           />
           <div
-            onMouseDown={() => setscreenToShow(7)}
+            onMouseDown={() => setscreenToShow(2)}
             onMouseEnter={() => setDescription("Sedimented Surfaces")}
             onMouseLeave={() => setDescription(undefined)}
             onMouseMove={e => setDescriptionPosition([e.clientX, e.clientY])}
             style={{
               position: "absolute",
               backgroundColor: "#66003340",
-              width: "27%",
-              height: "16%",
-              top: "83%",
-              left: "1%"
+              width: "17%",
+              height: "21%",
+              top: "8%",
+              left: "82%"
             }}
           />
           {Description !== undefined && (
@@ -172,9 +175,10 @@ function MenuButton({ setscreenToShow }) {
                 left: DescriptionPosition[0] + 10,
                 top: DescriptionPosition[1] - 16,
 
-                color: "black",
+                color: "white",
                 fontSize: 20,
-                backgroundColor: "white"
+                backgroundColor: "#333333",
+                fontFamily: "Roboto Mono"
               }}
             >
               {Description}

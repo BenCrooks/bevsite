@@ -18,7 +18,6 @@ function CodedMaterialsText() {
       <div style={{ position: "absolute", top: "1%" }}>
         <div
           style={{
-            fontFamily: "Helvetica",
             top: 30,
             width: "70%",
             pointerEvents: "none",
@@ -26,19 +25,19 @@ function CodedMaterialsText() {
             color: "#ffffff",
             textAlign: "left",
             margin: "15%",
-            lineHeight: 1.5
+            lineHeight: 1.5,
+            fontFamily: "Roboto Mono"
           }}
         >
           <div
             style={{
-              fontFamily: "Helvetica",
               top: 30,
               pointerEvents: "none",
               fontSize: 14,
               color: "#ffffff",
               textAlign: "left",
               lineHeight: 1.5,
-              fontWeight: "bold"
+              fontFamily: "Roboto Mono"
             }}
           >
             The body as a site of coded knowledge.

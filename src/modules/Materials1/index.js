@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./index.css";
 import PropType from "prop-types";
 import FittedImage from "react-fitted-image";
@@ -101,9 +101,9 @@ import FullText from "./FullText";
 
 const Images = [
   [process],
-  [],
-  [BK1, BK2, BK3, BK4, BK5, BK6, BK7, BK8, BK9, BK10, BK11, BK12, BK13, BK14],
   [CM1, CM2, CM3, CM4, CM5, CM6, CM7],
+  [SS1, SS2, SS3, SS4, SS5, SS6, SS7, SS8],
+  [BK1, BK2, BK3, BK4, BK5, BK6, BK7, BK8, BK9, BK10, BK11, BK12, BK13, BK14],
   [WB1, WB2, WB3, WB4, WB5, WB6, WB7, WB8, WB9, WB10],
   [GE1, GE2, GE3, GE4, GE5, GE6, GE7, GE8, GE9, GE10],
   [
@@ -132,73 +132,74 @@ const Images = [
     WI23,
     WI24
   ],
-  [SS1, SS2, SS3, SS4, SS5, SS6, SS7, SS8]
+  []
 ];
 
 function Materials1({ screenToShow }) {
   const [showingImage, setShowingImage] = useState(0);
   const [pressed, setPressed] = useState(false);
   const [canShowImage, setcanShowImage] = useState();
+  const [run, setRun] = useState();
+
+  const [counter, setCounter] = useState(30);
+  const r = useRef(null);
+  r.current = { counter, setCounter };
+  useEffect(() => {
+    let temp = 0;
+    const id = setInterval(() => {
+      if (screenToShow === 3 || screenToShow === 4) {
+        if (temp !== Images[screenToShow].length - 1) {
+          setShowingImage(a => a + 1);
+          temp++;
+        } else {
+          setPressed(true);
+          window.clearInterval(id);
+        }
+      }
+    }, 500);
+    return () => {
+      clearInterval(id);
+    };
+  }, [run]);
 
   useEffect(() => {
-    if (screenToShow === 2 || screenToShow === 4) {
-      setTimeout(() => {
-        if (showingImage !== Images[screenToShow].length - 1) {
-          setShowingImage(a => a + 1);
-        }
-      }, 1000);
-    }
     setShowingImage(0);
     setPressed(false);
+    run ? setRun(false) : setRun(true);
   }, [screenToShow]);
-
-  useEffect(() => {
-    if (screenToShow === 2 || screenToShow === 4) {
-      setTimeout(() => {
-        if (!pressed) {
-          if (showingImage !== Images[screenToShow].length - 1) {
-            setShowingImage(a => a + 1);
-          } else {
-            setPressed(true);
-          }
-        }
-      }, 1000);
-    } else if (showingImage >= Images[screenToShow].length) {
-      setShowingImage(0);
-    }
-  }, [showingImage, screenToShow]);
 
   return (
     <div className="container">
-      {console.log("img", Images[screenToShow].showingImage)}
-      {screenToShow !== 1 ? (
-        <FittedImage
-          fit="cover"
-          onMouseUp={() => {
-            if (screenToShow !== 2 && screenToShow !== 4) {
-              setcanShowImage(undefined);
-              showingImage !== Images[screenToShow].length - 1
-                ? setShowingImage(a => a + 1)
-                : screenToShow !== 6
-                ? setPressed(a => !a)
-                : setShowingImage(0);
-              pressed && setShowingImage(0);
-            } else {
-              if (pressed) {
-                setPressed(false);
-                setShowingImage(0);
+      {Images[screenToShow][showingImage] !== undefined &&
+        (screenToShow !== 7 ? (
+          <FittedImage
+            fit="cover"
+            onMouseUp={() => {
+              if (screenToShow !== 3 && screenToShow !== 4) {
+                setcanShowImage(undefined);
+                showingImage !== Images[screenToShow].length - 1
+                  ? setShowingImage(a => a + 1)
+                  : screenToShow !== 6
+                  ? setPressed(a => !a)
+                  : setShowingImage(0);
+                pressed && setShowingImage(0);
+              } else {
+                if (showingImage >= Images[screenToShow].length - 1) {
+                  setPressed(false);
+                  setShowingImage(0);
+                  run ? setRun(false) : setRun(true);
+                }
               }
-            }
-          }}
-          src={Images[screenToShow][showingImage]}
-          className="images"
-          alt="logo"
-          name="Materials1"
-        ></FittedImage>
-      ) : (
-        !pressed && setPressed(true)
-      )}
-      {screenToShow !== 1 && screenToShow !== 2 && screenToShow !== 4 && (
+            }}
+            src={Images[screenToShow][showingImage]}
+            className="images"
+            alt="logo"
+            name="Materials1"
+          />
+        ) : (
+          !pressed && setPressed(true)
+        ))}
+      {screenToShow !== 7 && screenToShow !== 3 && screenToShow !== 4 && (
         <ZoomFunctionality
           imag={canShowImage}
           imgSrc={Images[screenToShow][showingImage]}
@@ -207,19 +208,20 @@ function Materials1({ screenToShow }) {
 
       {pressed &&
         (screenToShow === 0 ? (
-          <IntroductionText />
+          // <IntroductionText />
+          <></>
         ) : screenToShow === 1 ? (
-          <FullText />
-        ) : screenToShow === 2 ? (
-          <CodedMaterialsText />
-        ) : screenToShow === 3 ? (
           <BodyAsASightForKnowledgeText />
+        ) : screenToShow === 2 ? (
+          <SedimentedSurfacesText />
+        ) : screenToShow === 3 ? (
+          <CodedMaterialsText />
         ) : screenToShow === 4 ? (
           <WeavingIsBodilyText />
         ) : screenToShow === 5 ? (
           <GenderedEmbodimentText />
         ) : (
-          screenToShow === 7 && <SedimentedSurfacesText />
+          screenToShow === 7 && <FullText />
         ))}
     </div>
   );

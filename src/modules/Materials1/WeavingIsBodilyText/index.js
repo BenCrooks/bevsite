@@ -18,7 +18,6 @@ function WeavingIsBodilyText() {
       <div style={{ position: "absolute", top: "2%" }}>
         <div
           style={{
-            fontFamily: "Helvetica",
             top: 30,
             width: "70%",
             pointerEvents: "none",
@@ -26,14 +25,15 @@ function WeavingIsBodilyText() {
             color: "#ffffff",
             textAlign: "left",
             margin: "15%",
-            lineHeight: 1.5
+            lineHeight: 1.5,
+            fontFamily: "Roboto Mono"
           }}
         >
           <div
             style={{
               fontSize: 12,
               color: "#ffffff",
-              fontWeight: "bold"
+              fontFamily: "Roboto Mono"
             }}
           >
             weaving is bodily
